@@ -19,13 +19,12 @@ def parse_text(data):
     return data
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def main():
     if request.method == 'POST':
         resp = request.get_json()
         if 'text' in resp['message']:
             send_text(parse_text(resp))
-            return '...'
     return '...'
 
 
